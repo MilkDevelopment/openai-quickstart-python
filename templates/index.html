@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <head>
-  <title>OpenAI Quickstart</title>
-  <link
-    rel="shortcut icon"
-    href="{{ url_for('static', filename='dog.png') }}"
-  />
+  <img class="img" src="static\logo.png" alt="Logo">
+  <title>Fiverr Content Generator</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
 </head>
 
 <body>
-  <img src="{{ url_for('static', filename='dog.png') }}" class="icon" />
-  <h3>Name my pet</h3>
-  <form action="/" method="post">
-    <input type="text" name="animal" placeholder="Enter an animal" required />
-    <input type="submit" value="Generate names" />
-  </form>
+  <h3 class="title">OpenCopy</h3>
+  <div class="col">
+    <div class="card">
+      <form action="/" method="post">
+        <input type="text" name="product" placeholder="Enter Product Description" required />
+        <input type="submit" value="Generate AD" />
+      </form>
+
+    </div>
+
+    <div class="card">
+      <form action="/proofread" method="post">
+        <input type="text" name="text" placeholder="Enter Text" required />
+        <input type="submit" value="Proofread Text" />
+      </form>
+
+    </div>
+  </div>
   {% if result %}
   <div class="result">{{ result }}</div>
   {% endif %}
